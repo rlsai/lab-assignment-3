@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Deals Review</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+
+  <style>
+      #translatedText
+      {
+          color : #2121bc;
+          font-size:35px;
+      }
+
+    .body{
+      background-image: url("http://geodavephotography.com/images/image-background/36253577-image-background.jpg");
+      position: absolute;
+      top: 10px;
+      left: 320px;
+      right: -40px;
+      bottom: -40px;
+      width: auto;
+      height: auto;
+      background-size: cover;
+      -webkit-filter: blur(0px);
+      z-index: 0;
+    }
+
+    .menu input{
+      width: 250px;
+      height: 30px;
+      background: honeydew;
+      border: 4px solid rgba(50,0,0,0.6);
+      border-radius: 4px;
+      color: brown;
+      font-family: 'Exo', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 4px;
+    }
+    .menu button{
+        width: 260px;
+        height: 35px;
+        background:black;
+        border:  4px solid rgba(50,0,0,0.6);
+        cursor: pointer;
+        border-radius: 4px;
+        color: white;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 6px;
+        margin-top: 10px;
+    }
+    .tblSpan {
+        width: 260px;
+        height: 35px;
+        left: 40px;
+        background: rebeccapurple;
+        border:  2px solid rgba(50,0,0,0.6);
+        cursor: pointer;
+        border-radius: 4px;
+        color: #000000;
+        font-family: 'Exo', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px;
+        margin-top: 10px;
+    }
+  </style>
+
+</head>
+<body class="body">
+
+
+  <div  ng-controller="View1Ctrl" style="top: 200px">
+    <div class="menu" id="div_SearchContainer">
+        <img src = "http://adevarulfinanciar.ro/wp-content/uploads/2015/05/youtube_getty.jpg" style="width:304px;height:228px;">
+        <img src = "http://chamberstranslations.com/wp-content/uploads/2014/03/English-to-Russian-Translation-service1.jpg" style=width:304px;height:228px;">
+    <h1 align="absolute" style="color:black">Search for top trending youtube videos</h1>
+
+    <input type="text" id="txt_placeName" placeholder="Enter key word"/>
+
+    <button id="btn_getReview" ng-click="getVenues()">Search</button>
+    </div>
+    <div id="div_VenueList">
+        <h3 id="translatedText"></h3>
+        <h2 style="color: rgba(209,23,19,0.86)"> Top trending videos  </h2>
+
+              <ul style="font-size: x-large">
+                <li ng-repeat="venue in venueList" style="color: cornsilk">
+
+                   <a  href="https://www.youtube.com/watch?v={{venue.id}}" target = "_blank" ng-click="getReviews(venue)" style="color: #b568ff">{{venue.name}}</a>
+
+                </li>
+              </ul>
+    </div>
+    <div id="div_ReviewList" style="display:none;"  >
+
+    </div>
+  </div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="app.js"></script>
+
+
+</body>
+</html>
